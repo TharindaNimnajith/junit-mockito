@@ -27,4 +27,9 @@ public class TestCalculator {
     public void testAddService() {
         assertEquals(5, calculator.addService(2, 3));
     }
+
+    @Test
+    public void testNewAddService() {
+        assertEquals(5, calculator.addNewService(2, 3));
+    }
 }
