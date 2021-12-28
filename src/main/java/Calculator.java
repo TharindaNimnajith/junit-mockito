@@ -1,12 +1,21 @@
 public class Calculator {
-    ICalculatorService iCalculatorService;
+    ICalculatorService iCalculatorService1;
 
     @SuppressWarnings("Convert2Lambda")
-    INewCalculatorService iNewCalculatorService = new INewCalculatorService() {
-       public int add(int i, int j) {
-           return i + j;
-       }
+    ICalculatorService iCalculatorService2 = new ICalculatorService() {
+        public int add(int i, int j) {
+            return i + j;
+        }
     };
+
+    ICalculatorService iCalculatorService3;
+
+    public Calculator() {
+    }
+
+    public Calculator(ICalculatorService iCalculatorService) {
+        this.iCalculatorService3 = iCalculatorService;
+    }
 
     public int add(int i, int j) {
         return i + j;
@@ -16,11 +25,15 @@ public class Calculator {
         return i + j + 1;
     }
 
-    public int addService(int i, int j) {
-        return iCalculatorService.add(i, j);
+    public int addService1(int i, int j) {
+        return iCalculatorService1.add(i, j);
     }
 
-    public int addNewService(int i, int j) {
-        return iNewCalculatorService.add(i, j);
+    public int addService2(int i, int j) {
+        return iCalculatorService2.add(i, j);
+    }
+
+    public int addService3(int i, int j) {
+        return iCalculatorService3.add(i, j);
     }
 }
