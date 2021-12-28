@@ -10,6 +10,6 @@ public class Calculator {
     }
 
     public int addService(int i, int j) {
-        return iCalculatorService.add(j, j);
+        return iCalculatorService.add(i, j);
     }
 }
